@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Recursos Multimídia — Cap. 4 / Ativ. 4</title>
+</head>
+<body>
+  <header>
+    <h1>Recursos Multimídia — Programação Web 1</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Aula em Vídeo</h2>
+      <figure>
+        <video controls width="800" height="450" poster="poster-aula.jpg" preload="metadata">
+          <source src="videos/aula-html.mp4" type="video/mp4" />
+          <source src="videos/aula-html.webm" type="video/webm" />
+          <track kind="subtitles" src="legendas/aula-html.vtt" srclang="pt" label="Português" default />
+          <p>Seu navegador não suporta vídeo HTML5. <a href="videos/aula-html.mp4">Baixe o vídeo aqui</a>.</p>
+        </video>
+        <figcaption>Vídeo 1 — Introdução ao HTML Semântico. Produção própria, IFAL, 2026.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Podcast Semanal</h2>
+      <figure>
+        <audio controls preload="metadata">
+          <source src="audio/podcast-ep01.mp3" type="audio/mpeg" />
+          <source src="audio/podcast-ep01.ogg" type="audio/ogg" />
+          <p>Seu navegador não suporta áudio HTML5. <a href="audio/podcast-ep01.mp3">Baixe o áudio aqui</a>.</p>
+        </audio>
+        <figcaption>Episódio 1: O Mercado de TI em 2026. Veja a <a href="transcricao.html">transcrição completa</a>.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Tutorial Externo</h2>
+      <figure>
+        <iframe width="800" height="450" 
+                src="https://www.youtube-nocookie.com/embed/Ptbk2af68e8" 
+                title="O que é HTML e para que serve? - Canal Curso em Vídeo" 
+                loading="lazy" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+        <figcaption>Vídeo Educacional — "O que é HTML?", disponível no canal Curso em Vídeo via YouTube.</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Infográfico de Carreira</h2>
+      <figure>
+        <picture>
+          <source media="(min-width: 768px)" srcset="img/banner-wide.jpg">
+          <img src="img/banner-mobile.jpg" alt="Mapa de carreira em tecnologia mostrando evolução de júnior a sênior" width="400" height="300">
+        </picture>
+        <figcaption>Infográfico demonstrando as trilhas de aprendizado para desenvolvedores Fullstack.</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Atividade 4 — Capítulo 4 | Programação Web 1 |
+      Aluno: Vitória Cestari | Matrícula: 2026001070 |
+      <time datetime="2026-05-04">Maio de 2026</time>
+    </p>
+    <p><a href="../index.html">← Voltar à página principal</a></p>
+  </footer>
+</body>
+</html>
