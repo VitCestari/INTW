@@ -1,24 +1,57 @@
+/* ==========================================================================
+   1. VARIÁVEIS DO SISTEMA (:root) e RESET BÁSICO
+   ========================================================================== */
 :root {
-  --cor-primaria: #6200ee;
+  --cor-primaria: #1a73e8;
   --cor-fundo: #ffffff;
-  --cor-texto: #333333;
+  --cor-fundo-alt: #f8f9fa;
+  --cor-texto: #202124;
+  --cor-texto-mutado: #5f6368;
+  --cor-destaque: #e00051;
+  
+  /* Uso do clamp() para tipografia fluida conforme os conceitos do capítulo */
+  --tamanho-titulo: clamp(1.75rem, 4vw, 2.5rem);
+  
   --altura-nav: 60px;
   --espaco-md: 1rem;
   --espaco-lg: 2rem;
   --raio-borda: 8px;
   --raio-circulo: 9999px;
+  
+  /* Controle estrito de pilhas de camadas (Camadas Z) */
   --z-nav: 1000;
-  --z-sticky: 100;
   --z-btn-topo: 999;
   --z-tooltip: 500;
+  --z-sticky: 100;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  padding-top: var(--altura-nav); /* Evita sobreposição da nav fixed */
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  /* ATENÇÃO: Adiciona espaço no topo idêntico à altura da nav fixa para evitar ocultar o conteúdo inicial */
+  padding-top: var(--altura-nav);
 }
 
+/* ==========================================================================
+   2. COMPONENTES OBRIGATÓRIOS DE POSICIONAMENTO
+   ========================================================================== */
+
+/* COMPONENTE 1 — Barra de navegação fixa */
 .nav-fixa {
   position: fixed;
   top: 0;
@@ -26,80 +59,178 @@ body {
   width: 100%;
   height: var(--altura-nav);
   background-color: var(--cor-primaria);
-  color: white;
   z-index: var(--z-nav);
-  display: flex;
-  align-items: center;
-  padding: 0 var(--espaco-md);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.nav-conteudo {
+  max-width: 800px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 var(--espaco-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+}
+
+.nav-link-voltar {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.nav-link-voltar:hover {
+  text-decoration: underline;
+}
+
+/* COMPONENTE 2 — Cabeçalho de seção grudento */
 .titulo-sticky {
   position: sticky;
+  /* Fixa exatamente abaixo da barra de navegação principal */
   top: var(--altura-nav);
   z-index: var(--z-sticky);
-  background-color: #eee;
-  padding: var(--espaco-md);
-  border-bottom: 2px solid var(--cor-primaria);
+  background-color: var(--cor-fundo);
+  padding: var(--espaco-md) 0;
+  margin-top: var(--espaco-lg);
+  margin-bottom: var(--espaco-md);
+  color: var(--cor-primaria);
+  border-bottom: 2px solid var(--cor-fundo-alt);
 }
 
+/* COMPONENTE 3 — Selo de destaque em cartão */
 .cartao-destaque {
-  position: relative;
-  border: 2px solid #ddd;
+  position: relative; /* Contexto de posicionamento para o filho absoluto */
+  background-color: var(--cor-fundo-alt);
+  border: 1px solid #dadce0;
+  border-radius: var(--raio-borda);
   padding: var(--espaco-lg);
   margin: var(--espaco-lg) 0;
-  border-radius: var(--raio-borda);
+}
+
+.cartao-destaque h3 {
+  margin-bottom: 0.5rem;
+  padding-right: var(--espaco-lg);
 }
 
 .selo {
   position: absolute;
-  top: -10px;
-  right: -10px;
-  background-color: #ff4081;
-  color: white;
-  padding: 5px 10px;
-  border-radius: var(--raio-circulo);
-  font-size: 0.8rem;
+  /* Valores negativos para criar o efeito visual de transbordar e sobrepor a borda do cartão */
+  top: -12px;
+  right: var(--espaco-md);
+  background-color: var(--cor-destaque);
+  color: #ffffff;
+  font-size: 0.75rem;
   font-weight: bold;
+  padding: 4px 12px;
+  border-radius: var(--raio-circulo);
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
+/* COMPONENTE 4 — Botão "Voltar ao topo" */
 .btn-topo {
   position: fixed;
   bottom: var(--espaco-lg);
   right: var(--espaco-lg);
-  z-index: var(--z-btn-topo);
-  background-color: var(--cor-primaria);
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: var(--raio-circulo);
+  z-index: var(--z-btn-topo); /* Fica abaixo da nav, mas acima do conteúdo comum */
+  width: 45px;
+  height: 45px;
+  background-color: var(--cor-texto);
+  color: #ffffff;
   text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: var(--raio-circulo);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
+.btn-topo:hover {
+  background-color: var(--cor-primaria);
+  transform: translateY(-3px);
+}
+
+/* COMPONENTE 5 — Tooltip */
 .tooltip-container {
-  position: relative;
+  position: relative; /* Contexto para alinhar o balão interno */
   display: inline-block;
   color: var(--cor-primaria);
-  text-decoration: underline;
+  font-weight: 500;
+  border-bottom: 1px dashed var(--cor-primaria);
   cursor: help;
 }
 
 .tooltip-texto {
-  visibility: hidden;
+  visibility: hidden; /* Oculto por padrão, mas preserva a acessibilidade na árvore */
   position: absolute;
-  bottom: 125%;
+  bottom: 125%; /* Alinha logo acima do termo textual */
   left: 50%;
-  transform: translateX(-50%);
-  background-color: #333;
-  color: white;
-  padding: 5px 10px;
+  transform: translateX(-50%); /* Centralização horizontal perfeita */
+  background-color: #333333;
+  color: #ffffff;
+  font-size: 0.8rem;
+  padding: 6px 12px;
   border-radius: 4px;
   white-space: nowrap;
   z-index: var(--z-tooltip);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Ativação do Tooltip via Hover */
 .tooltip-container:hover .tooltip-texto {
   visibility: visible;
+}
+
+/* ==========================================================================
+   3. ESTILOS GERAIS DE ESTRUTURA E LEITURA
+   ========================================================================== */
+.cabecalho-principal {
+  max-width: 800px;
+  margin: var(--espaco-lg) auto 0 auto;
+  padding: 0 var(--espaco-md);
+  text-align: center;
+}
+
+.cabecalho-principal h1 {
+  font-size: var(--tamanho-titulo);
+  color: var(--cor-texto);
+  margin-bottom: 0.5rem;
+}
+
+.cabecalho-principal p {
+  color: var(--cor-texto-mutado);
+  font-size: 1.1rem;
+}
+
+.conteudo-principal {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--espaco-md);
+}
+
+.secao-texto p {
+  margin-bottom: 1.25rem;
+  color: #3c4043;
+  text-align: justify;
+}
+
+.paragrafo-tooltip {
+  background-color: #f1f3f4;
+  padding: var(--espaco-md);
+  border-radius: var(--raio-borda);
+  border-left: 4px solid var(--cor-primaria);
+}
+
+code {
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  background-color: #f1f3f4;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: var(--cor-destaque);
 }
