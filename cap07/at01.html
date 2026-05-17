@@ -5,50 +5,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PWEB1 — Cap. 07 — AT01 — Cartão de Apresentação</title>
   <style>
+    /* Regras do Elemento Body */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f0f2f5;
+      background-color: #eaeaea;
       text-align: center;
-      padding: 50px;
+      padding: 3rem var(--espaco-md, 1rem);
     }
 
+    header {
+      margin-bottom: 2rem;
+    }
+
+    header p a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    header p a:hover {
+      text-decoration: underline;
+    }
+
+    /* Bloco do Cartão de Apresentação */
     .cartao {
       background-color: #ffffff;
+      border-radius: 12px;
+      padding: 2.5rem 1.5rem;
       max-width: 400px;
       margin: 0 auto;
-      padding: 2rem;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     }
 
+    /* Nome Completo */
     .cartao-nome {
-      font-size: 2.5rem;
-      color: #1a73e8;
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: #1a1a1a;
       margin-bottom: 0.5rem;
     }
 
-    .cartao-divisor {
+    /* Linha Divisória Personalizada */
+    hr, .cartao-divisor {
       border: 0;
-      border-top: 2px dashed #aecbfa;
-      margin: 1.5rem 0;
+      border-top: 2px dashed #0066cc;
+      margin: 1.25rem auto;
+      width: 60%;
     }
 
+    /* Cargo ou Função */
     .cartao-cargo {
       font-style: italic;
-      color: #5f6368;
-      font-weight: 500;
+      color: #555555;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
     }
 
+    /* E-mail de Contato */
     .cartao-email {
       font-size: 0.9rem;
-      color: #70757a;
-      margin-top: 1rem;
+      color: #0066cc;
+      font-weight: 500;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Cartão de Apresentação</h1>
+    <h1>AT01 — Cartão de Apresentação</h1>
     <p><a href="../index.html">← Voltar para a página principal</a></p>
   </header>
 
@@ -60,5 +83,6 @@
       <p class="cartao-email">vcds1@aluno.ifal.edu.br</p>
     </article>
   </main>
+
 </body>
 </html>
