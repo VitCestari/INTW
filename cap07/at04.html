@@ -6,66 +6,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PWEB1 — Cap. 07 — AT04 — Página com Posicionamento</title>
+  <!-- Link para o CSS externo da atividade -->
   <link rel="stylesheet" href="at04.css" />
 </head>
-<body id="topo"> <!-- ID necessário para o botão voltar ao topo -->
+<body id="topo">
 
-  <!-- Componente 1 — Barra de navegação fixa -->
+  <!-- Componente 1 — Barra de navegação fixa (position: fixed) -->
   <nav class="nav-fixa">
-    <strong>PWEB1 — Posicionamento</strong>
-    <span style="margin-left: 20px;"><a href="../index.html" style="color: white;">← Voltar ao Início</a></span>
+    <div class="nav-conteudo">
+      <strong>Sistemas de Informação</strong>
+      <a href="../index.html" class="nav-link-voltar">← Voltar para a página principal</a>
+    </div>
   </nav>
 
-  <header>
-    <h1>Página com Posicionamento Estruturado</h1>
+  <header class="cabecalho-principal">
+    <h1>AT04 — Página com Posicionamento Avançado</h1>
+    <p>Demonstração prática de fluxos de posicionamento (Fixed, Sticky, Absolute e Relative).</p>
   </header>
 
-  <main>
+  <main class="conteudo-principal">
     
-    <!-- Componente 2 — Cabeçalho de seção grudento -->
-    <section>
-      <h2 class="titulo-sticky">Seção 1 — O Início do Fluxo</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, veritatis distinctio? Voluptates ab animi repellendus sapiente ad, ducimus sequi possimus distinctio, delectus accusamus sit dolor laboriosam quos, reiciendis rem sed!</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem eius cum, minus sit necessitatibus vero non inventore placeat distinctio natus nihil aspernatur mollitia assumenda perferendis corporis, ad quos minima laboriosam.</p>
+    <!-- SEÇÃO 1: Introdução com bastante texto para rolagem -->
+    <section class="secao-texto">
+      <!-- Componente 2 — Cabeçalho de seção grudento (position: sticky) -->
+      <h2 class="titulo-sticky">Seção 1 — Entendendo o Fluxo do CSS</h2>
+      <p>O posicionamento no CSS é um dos conceitos mais fundamentais para a construção de layouts complexos e interfaces de usuário modernas. Por padrão, todos os elementos seguem o fluxo normal do documento, onde blocos são renderizados um após o outro verticalmente. No entanto, ao alterarmos a propriedade <code>position</code>, ganhamos superpoderes para mover elementos pela tela de formas específicas.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus, laboriosam omnis non quasi repellendus eveniet voluptatibus iure animi, corporis delectus distinctio. Nemo repellendus error, ipsam alias recusandae impedit nihil! Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat praesentium impedit dolor animi minima unde hic tempora quod rem debitis, error magnam eveniet sed aliquid ipsam cumque illum assumenda sapiente!</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio laudantium hic ex error id corrupti ipsam cum nihil? Facilis perferendis vero excepturi magnam commodi assumenda molestiae architecto cupiditate incidunt rem.</p>
     </section>
 
-    <section>
-      <!-- Componente 3 — Selo de destaque -->
-      <article class="cartao-destaque">
-        <span class="selo">NOVO</span>
-        <h3>Título do cartão</h3>
-        <p>Descrição do item em destaque utilizando posicionamento absoluto dentro de um pai relativo.</p>
-      </article>
-    </section>
-
-    <!-- Mais conteúdo de preenchimento para gerar rolagem (3 telas de altura) -->
-    <section>
-      <h2 class="titulo-sticky">Seção 2 — Demonstração de Altura</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus unde eveniet laudantium rem aut sequi id facilis corrupti ab reprehenderit iste aspernatur distinctio eos magnam, minima assumenda maxime cum inventore.</p>
+    <!-- SEÇÃO 2: Cartões e Elementos Absolutos -->
+    <section class="secao-texto">
+      <h2 class="titulo-sticky">Seção 2 — Elementos Absolutos e Relativos</h2>
+      <p>Quando definimos um elemento como <code>position: absolute</code>, ele é completamente removido do fluxo normal da página. Isso significa que os outros elementos agem como se ele nem existisse. Ele se posicionará em relação ao ancestral mais próximo que possua um posicionamento diferente de <code>static</code> (geralmente configurado como <code>relative</code>).</p>
       
-      <!-- Componente 5 — Tooltip -->
-      <p>
-        Passe o mouse sobre 
+      <!-- Componente 3 — Selo de destaque (position: absolute) -->
+      <article class="cartao-destaque">
+        <span class="selo">DESTAQUE</span>
+        <h3>Engenharia de Software de Alta Performance</h3>
+        <p>Aprenda a arquitetar sistemas escaláveis utilizando boas práticas de componentização, CSS limpo, estruturação semântica de código e otimizações de renderização no navegador.</p>
+      </article>
+
+      <p>Repare como o selo "DESTAQUE" acima se posiciona perfeitamente no canto superior direito do cartão, sobrepondo ligeiramente as bordas do elemento pai. Isso só é possível graças à combinação clássica de um pai com posicionamento relativo e um filho absoluto.</p>
+    </section>
+
+    <!-- SEÇÃO 3: Tooltips e Estados Visuais -->
+    <section class="secao-texto">
+      <h2 class="titulo-sticky">Seção 3 — Pseudo-classes e Interatividade Efêmera</h2>
+      <p>Layouts modernos exigem interações sutis que enriquecem a experiência do usuário sem poluir visualmente a tela. Um excelente exemplo disso são as dicas de contexto em elementos de texto.</p>
+      
+      <!-- Componente 5 — Tooltip (position: absolute + visibility) -->
+      <p class="paragrafo-tooltip">
+        Durante o desenvolvimento front-end, lembre-se de sempre validar a 
         <span class="tooltip-container">
-          esta palavra
-          <span class="tooltip-texto">Esta é a dica de contexto!</span>
+          especificidade do CSS
+          <span class="tooltip-texto">Peso ou prioridade de uma regra CSS!</span>
         </span> 
-        para ver o tooltip funcionar em tempo real.
+        para evitar que regras colidam e causem bugs inesperados de renderização no navegador.
       </p>
 
-      <p style="margin-bottom: 400px;">Adicionando uma margem grande abaixo para empurrar o conteúdo e forçar bastante rolagem na tela...</p>
-      <p style="margin-bottom: 400px;">Mais um bloco de rolagem para testar o cabeçalho grudento (sticky)...</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae impedit eveniet natus dolorum recusandae id commodi sed minus, necessitatibus inventore, distinctio, excepturi ipsa consequatur temporibus? Architecto sit minus aspernatur necessitatibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis temporibus architecto reiciendis? Soluta similique unde voluptatibus eveniet minima perferendis nesciunt doloremque corporis alias quod dolores, non veritatis magnam facilis ad.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolores ad, laboriosam repellendus inventore, omnis voluptatem iusto sequi rem voluptatibus sit id laudantium? Dolores excepturi facilis quasi non? Eum, necessitatibus!</p>
     </section>
 
-    <section>
-      <h2 class="titulo-sticky">Seção 3 — Fim da Linha</h2>
-      <p>Você chegou ao fim do artigo longo preparado para testar as propriedades de CSS.</p>
+    <!-- SEÇÃO 4: Espaçamento final para garantir a rolagem longa -->
+    <section class="secao-texto">
+      <h2 class="titulo-sticky">Seção 4 — Considerações Finais sobre Layouts</h2>
+      <p>A propriedade <code>fixed</code> fixa o elemento em relação à viewport (janela do navegador), mantendo-o visível independentemente da rolagem. Já o valor <code>sticky</code> atua como um híbrido: ele se comporta como fluxo normal até atingir uma coordenada definida (como o topo da tela) e então passa a se comportar como fixo enquanto seu container pai estiver visível na tela.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab animi recusandae necessitatibus assumenda id incidunt est ipsum temporibus tempora reiciendis aut reprehenderit quasi veritatis aliquid, sit repellendus iusto quod corrupti!</p>
+      <p style="margin-bottom: var(--espaco-lg);">Fim do conteúdo estrutural do artigo demonstrativo.</p>
     </section>
 
   </main>
 
-  <!-- Componente 4 — Botão "Voltar ao topo" -->
-  <a href="#topo" class="btn-topo" title="Voltar ao topo">↑</a>
+  <!-- Componente 4 — Botão "Voltar ao topo" (position: fixed + z-index) -->
+  <a href="#topo" class="btn-topo" aria-label="Voltar ao topo">↑</a>
 
 </body>
 </html>
