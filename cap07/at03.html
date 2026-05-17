@@ -1,5 +1,3 @@
-<link rel="stylesheet" href="at03.css" />
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,13 +7,12 @@
   <link rel="stylesheet" href="at03.css" />
 </head>
 <body>
-
   <header>
     <h1>Galeria de Seletores CSS</h1>
     <p><a href="../index.html">← Voltar para a página principal</a></p>
   </header>
 
-  <main>
+  <main class="container-galeria">
 
     <!-- SEÇÃO 1: Seletores de atributo -->
     <section id="sec-atributo">
@@ -58,10 +55,11 @@
         <label for="cidade-03">Cidade:</label>
         <input type="text" id="cidade-03" name="cidade" disabled value="Maceió" />
 
-        <label>
-          <input type="checkbox" name="aceite-03" />
-          Concordo com os termos
-        </label>
+        <!-- Correção semântica para validação do seletor irmão adjacente -->
+        <div class="checkbox-container">
+          <input type="checkbox" id="aceite-03" name="aceite-03" />
+          <label class="label-checkbox" for="aceite-03">Concordo com os termos</label>
+        </div>
 
         <button type="submit">Enviar</button>
       </form>
@@ -94,6 +92,5 @@
     </section>
 
   </main>
-
 </body>
 </html>
