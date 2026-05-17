@@ -1,0 +1,105 @@
+:root {
+  --cor-primaria: #6200ee;
+  --cor-fundo: #ffffff;
+  --cor-texto: #333333;
+  --altura-nav: 60px;
+  --espaco-md: 1rem;
+  --espaco-lg: 2rem;
+  --raio-borda: 8px;
+  --raio-circulo: 9999px;
+  --z-nav: 1000;
+  --z-sticky: 100;
+  --z-btn-topo: 999;
+  --z-tooltip: 500;
+}
+
+body {
+  margin: 0;
+  padding-top: var(--altura-nav); /* Evita sobreposição da nav fixed */
+  font-family: sans-serif;
+}
+
+.nav-fixa {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--altura-nav);
+  background-color: var(--cor-primaria);
+  color: white;
+  z-index: var(--z-nav);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--espaco-md);
+}
+
+.titulo-sticky {
+  position: sticky;
+  top: var(--altura-nav);
+  z-index: var(--z-sticky);
+  background-color: #eee;
+  padding: var(--espaco-md);
+  border-bottom: 2px solid var(--cor-primaria);
+}
+
+.cartao-destaque {
+  position: relative;
+  border: 2px solid #ddd;
+  padding: var(--espaco-lg);
+  margin: var(--espaco-lg) 0;
+  border-radius: var(--raio-borda);
+}
+
+.selo {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #ff4081;
+  color: white;
+  padding: 5px 10px;
+  border-radius: var(--raio-circulo);
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.btn-topo {
+  position: fixed;
+  bottom: var(--espaco-lg);
+  right: var(--espaco-lg);
+  z-index: var(--z-btn-topo);
+  background-color: var(--cor-primaria);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: var(--raio-circulo);
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tooltip-container {
+  position: relative;
+  display: inline-block;
+  color: var(--cor-primaria);
+  text-decoration: underline;
+  cursor: help;
+}
+
+.tooltip-texto {
+  visibility: hidden;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  z-index: var(--z-tooltip);
+}
+
+.tooltip-container:hover .tooltip-texto {
+  visibility: visible;
+}
