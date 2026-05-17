@@ -4,37 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PWEB1 — Cap. 07 — AT02 — Artigo Tipográfico</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lora:ital@0;1&display=swap" rel="stylesheet">
-  
+
+  <!-- 1. Web Fonts (Google Fonts) importadas antes do estilo local -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- 2. CSS externo da atividade -->
   <link rel="stylesheet" href="at02.css" />
 </head>
 <body>
-  <header class="container">
-    <h1>A Evolução da Web Semântica</h1>
-    <p><time datetime="2026-05-14">14 de Maio de 2026</time></p>
-    <p><a href="../index.html">← Voltar para a página principal</a></p>
+
+  <header class="topo-pagina">
+    <div class="container">
+      <h1>AT02 — Artigo Tipográfico</h1>
+      <p><a href="../index.html">← Voltar para a página principal</a></p>
+    </div>
   </header>
 
   <main class="container">
     <article>
-      <p>A Web Semântica, frequentemente referida como Web 3.0, representa uma evolução significativa na forma como os dados são estruturados na rede. Diferente da web documental, ela foca no significado das informações.</p>
-      
-      <h2>Por que a tipografia importa?</h2>
-      <p>No desenvolvimento front-end, a legibilidade é fundamental. O uso correto de unidades relativas como <strong>rem</strong> garante que o usuário tenha controle sobre a acessibilidade do texto.</p>
-      
+      <header class="artigo-header">
+        <h1 class="artigo-titulo">A Evolução da Web Semântica e o Impacto do CSS Moderno</h1>
+        <p class="artigo-meta">Publicado em <time datetime="2026-05-17">17 de Maio de 2026</time> por Tecnologia Ativa</p>
+      </header>
+
+      <p>A arquitetura da Web mudou drasticamente desde a criação das primeiras páginas estáticas. O que antes era apenas uma coleção de documentos interligados por hipertextos simplistas, transformou-se em uma plataforma robusta capaz de rodar aplicações de alta performance diretamente no ecossistema do navegador.</p>
+
+      <h2>O Papel do Design System Orientado a Telas</h2>
+      <p>Com o surgimento de múltiplos tamanhos de dispositivos, a folha de estilo assumiu uma responsabilidade crucial: separar definitivamente a estrutura lógica dos dados (HTML) de sua camada de apresentação visual. Interfaces escaláveis nascem da combinação balanceada de tipografia fluida e grids flexíveis.</p>
+
       <blockquote>
-        "O design não é apenas o que parece e o que se sente. O design é como funciona." — Steve Jobs
+        "O verdadeiro poder da Web está na sua universalidade. O acesso por qualquer pessoa, independentemente de deficiências ou do dispositivo utilizado, é um aspecto essencial."
       </blockquote>
 
-      <p>Dominar o CSS externo é o primeiro passo para criar sistemas de design escaláveis e organizados, permitindo a separação clara entre estrutura e estética.</p>
+      <h2>Padrões Estritos e Manutenibilidade</h2>
+      <p>Escrever código limpo implica adotar boas práticas de encapsulamento e arquiteturas previsíveis, como o uso de variáveis globais nativas e controle rígido de pilhas de prioridade. A validação sintática das folhas de estilo previne falhas invisíveis em produção.</p>
     </article>
   </main>
 
-  <footer class="container">
-    <p>Autor: Vitória Cestari Duarte</p>
+  <footer class="rodape-pagina">
+    <div class="container">
+      <p>Autor do Artigo: Vitória Silva — Sistemas de Informação</p>
+    </div>
   </footer>
+
 </body>
 </html>
