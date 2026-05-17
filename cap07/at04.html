@@ -1,1 +1,71 @@
 <link rel="stylesheet" href="at04.css" />
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PWEB1 — Cap. 07 — AT04 — Página com Posicionamento</title>
+  <link rel="stylesheet" href="at04.css" />
+</head>
+<body id="topo"> <!-- ID necessário para o botão voltar ao topo -->
+
+  <!-- Componente 1 — Barra de navegação fixa -->
+  <nav class="nav-fixa">
+    <strong>PWEB1 — Posicionamento</strong>
+    <span style="margin-left: 20px;"><a href="../index.html" style="color: white;">← Voltar ao Início</a></span>
+  </nav>
+
+  <header>
+    <h1>Página com Posicionamento Estruturado</h1>
+  </header>
+
+  <main>
+    
+    <!-- Componente 2 — Cabeçalho de seção grudento -->
+    <section>
+      <h2 class="titulo-sticky">Seção 1 — O Início do Fluxo</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, veritatis distinctio? Voluptates ab animi repellendus sapiente ad, ducimus sequi possimus distinctio, delectus accusamus sit dolor laboriosam quos, reiciendis rem sed!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem eius cum, minus sit necessitatibus vero non inventore placeat distinctio natus nihil aspernatur mollitia assumenda perferendis corporis, ad quos minima laboriosam.</p>
+    </section>
+
+    <section>
+      <!-- Componente 3 — Selo de destaque -->
+      <article class="cartao-destaque">
+        <span class="selo">NOVO</span>
+        <h3>Título do cartão</h3>
+        <p>Descrição do item em destaque utilizando posicionamento absoluto dentro de um pai relativo.</p>
+      </article>
+    </section>
+
+    <!-- Mais conteúdo de preenchimento para gerar rolagem (3 telas de altura) -->
+    <section>
+      <h2 class="titulo-sticky">Seção 2 — Demonstração de Altura</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus unde eveniet laudantium rem aut sequi id facilis corrupti ab reprehenderit iste aspernatur distinctio eos magnam, minima assumenda maxime cum inventore.</p>
+      
+      <!-- Componente 5 — Tooltip -->
+      <p>
+        Passe o mouse sobre 
+        <span class="tooltip-container">
+          esta palavra
+          <span class="tooltip-texto">Esta é a dica de contexto!</span>
+        </span> 
+        para ver o tooltip funcionar em tempo real.
+      </p>
+
+      <p style="margin-bottom: 400px;">Adicionando uma margem grande abaixo para empurrar o conteúdo e forçar bastante rolagem na tela...</p>
+      <p style="margin-bottom: 400px;">Mais um bloco de rolagem para testar o cabeçalho grudento (sticky)...</p>
+    </section>
+
+    <section>
+      <h2 class="titulo-sticky">Seção 3 — Fim da Linha</h2>
+      <p>Você chegou ao fim do artigo longo preparado para testar as propriedades de CSS.</p>
+    </section>
+
+  </main>
+
+  <!-- Componente 4 — Botão "Voltar ao topo" -->
+  <a href="#topo" class="btn-topo" title="Voltar ao topo">↑</a>
+
+</body>
+</html>
