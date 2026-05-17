@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PWEB1 — Cap. 07 — AT05 — Mini Design System</title>
+  <!-- Restrição obedecida: Apenas o arquivo mestre de estilos é referenciado -->
+  <link rel="stylesheet" href="at05-style.css" />
+</head>
+<body>
+
+  <header style="padding: var(--espaco-md) var(--espaco-lg); background: var(--cor-fundo); box-shadow: var(--sombra-sm);">
+    <p><a href="../index.html" style="color: var(--cor-primaria); text-decoration: none; font-weight: 600;">← Voltar para a página principal</a></p>
+  </header>
+
+  <main>
+    <!-- Componente 1 — Hero com gradiente e imagem de fundo -->
+    <section class="hero">
+      <h1 class="hero__titulo">Aura UI</h1>
+      <p class="hero__subtitulo">Um mini ecossistema de design leve, agnóstico de frameworks e baseado puramente na especificação CSS Moderna.</p>
+      <a href="#botoes" class="hero__cta btn btn--primario">Ver Componentes</a>
+    </section>
+
+    <!-- Componente 2 — Botões com modificadores -->
+    <section id="botoes" class="doc-section">
+      <h2 class="doc-section__titulo">Componente 2 — Botões (Buttons)</h2>
+      <div style="display: flex; gap: var(--espaco-md); flex-wrap: wrap;">
+        <button class="btn btn--primario">Ação principal</button>
+        <button class="btn btn--secundario">Ação secundária</button>
+        <button class="btn btn--perigo">Ação destrutiva</button>
+        <button class="btn btn--primario" disabled>Desabilitado</button>
+      </div>
+    </section>
+
+    <!-- Componente 3 — Cartão com elemento posicionado -->
+    <section class="doc-section">
+      <h2 class="doc-section__titulo">Componente 3 — Cartões Estruturais (Cards)</h2>
+      <div style="max-width: 320px;">
+        <article class="card">
+          <span class="card__badge">Destaque</span>
+          <div class="card__imagem"></div>
+          <div class="card__corpo">
+            <h3 class="card__titulo">Introdução ao BEM</h3>
+            <p class="card__texto">Entenda como a organização baseada em Blocos, Elementos e Modificadores evita colisões de escopo global.</p>
+            <a class="card__link" href="#">Saiba mais →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Componente 4 — Tabela de tokens de cor -->
+    <section class="doc-section">
+      <h2 class="doc-section__titulo">Componente 4 — Tokens de Design (Cores)</h2>
+      <table class="tabela-tokens">
+        <thead>
+          <tr>
+            <th>Amostra</th>
+            <th>Nome do Token</th>
+            <th>Valor Semântico</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div style="width: 40px; height: 24px; border-radius: var(--raio-sm); background-color: var(--cor-primaria);"></div></td>
+            <td><code>--cor-primaria</code></td>
+            <td>Identidade da marca e botões de chamada primária.</td>
+          </tr>
+          <tr>
+            <td><div style="width: 40px; height: 24px; border-radius: var(--raio-sm); background-color: var(--cor-secundaria);"></div></td>
+            <td><code>--cor-secundaria</code></td>
+            <td>Ações secundárias, links e realces secundários.</td>
+          </tr>
+          <tr>
+            <td><div style="width: 40px; height: 24px; border-radius: var(--raio-sm); background-color: var(--cor-destaque);"></div></td>
+            <td><code>--cor-destaque</code></td>
+            <td>Avisos de atenção, badges e pontos críticos de conversão.</td>
+          </tr>
+          <tr>
+            <td><div style="width: 40px; height: 24px; border-radius: var(--raio-sm); background-color: var(--cor-sucesso);"></div></td>
+            <td><code>--cor-sucesso</code></td>
+            <td>Feedbacks de estados válidos e conclusões operacionais.</td>
+          </tr>
+          <tr>
+            <td><div style="width: 40px; height: 24px; border-radius: var(--raio-sm); background-color: var(--cor-erro);"></div></td>
+            <td><code>--cor-erro</code></td>
+            <td>Estados inválidos de formulário e alertas críticos.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Componente 5 — Formulário estilizado -->
+    <section class="doc-section" style="margin-bottom: var(--espaco-xl);">
+      <h2 class="doc-section__titulo">Componente 5 — Captura de Dados (Forms)</h2>
+      <form class="form" novalidate>
+        <div class="form__grupo">
+          <label class="form__label" for="txt-nome">Nome do Desenvolvedor:</label>
+          <input class="form__input" type="text" id="txt-nome" required placeholder="Digite seu nome completo" />
+          <span class="form__mensagem-erro">O campo de identificação é de preenchimento obrigatório.</span>
+        </div>
+
+        <div class="form__grupo">
+          <label class="form__label" for="txt-email">E-mail de Homologação:</label>
+          <input class="form__input" type="email" id="txt-email" required placeholder="exemplo@dominio.com" />
+          <span class="form__mensagem-erro">Insira um padrão estrutural de e-mail válido (contendo @ e domínio).</span>
+        </div>
+
+        <div class="form__grupo">
+          <label class="form__label" for="txt-token">Chave API Organizacional (Opcional):</label>
+          <input class="form__input" type="text" id="txt-token" placeholder="Insira o hash de desenvolvimento" />
+        </div>
+
+        <div style="margin-top: var(--espaco-sm);">
+          <button class="form__botao btn btn--primario" type="submit">Validar Ambiente</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+</body>
+</html>
