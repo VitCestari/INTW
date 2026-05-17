@@ -1,0 +1,33 @@
+@import url('at05-reset.css');
+@import url('at05-variables.css');
+
+/* Componente 1: Hero */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://picsum.photos/1200/800');
+  background-size: cover;
+  background-position: center;
+  color: var(--cor-texto-claro);
+}
+
+.hero__titulo { font-size: var(--texto-display); margin-bottom: var(--espaco-md); }
+.hero__subtitulo { font-size: var(--texto-h2); opacity: 0.9; }
+
+/* Componente 2: Botões (BEM) */
+.btn {
+  padding: var(--espaco-md) var(--espaco-lg);
+  border: none;
+  border-radius: var(--raio-md);
+  cursor: pointer;
+  transition: var(--transicao);
+}
+
+.btn--primario { background-color: var(--cor-primaria); color: white; }
+.btn--secundario { background-color: var(--cor-secundaria); color: white; }
+.btn--perigo { background-color: var(--cor-erro); color: white; }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
