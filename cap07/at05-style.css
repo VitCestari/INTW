@@ -1,0 +1,265 @@
+@import url('at05-reset.css');
+@import url('at05-variables.css');
+
+/* Estilos de documentação base */
+body {
+  font-family: var(--fonte-base);
+  background-color: var(--cor-fundo-alt);
+  color: var(--cor-texto);
+}
+
+.doc-section {
+  max-width: var(--largura-max);
+  margin: var(--espaco-xl) auto;
+  padding: var(--espaco-lg);
+  background-color: var(--cor-fundo);
+  border-radius: var(--raio-lg);
+  box-shadow: var(--sombra-md);
+}
+
+.doc-section__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--texto-h2);
+  margin-bottom: var(--espaco-lg);
+  border-bottom: 2px solid var(--cor-fundo-alt);
+  padding-bottom: var(--espaco-sm);
+}
+
+/* ─── COMPONENTE 1: Hero ─────────────────────────── */
+.hero {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--espaco-lg);
+  /* Múltiplos backgrounds: Gradiente linear semitransparente + Imagem do Unsplash */
+  background-image: linear-gradient(135deg, rgba(79, 70, 229, 0.85), rgba(14, 165, 233, 0.85)), 
+                    url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200');
+  background-size: cover;
+  background-position: center;
+  background-attachment: relative;
+  color: var(--cor-texto-claro);
+}
+
+.hero__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--texto-display);
+  font-weight: 800;
+  margin-bottom: var(--espaco-md);
+  line-height: 1.1;
+}
+
+.hero__subtitulo {
+  font-size: var(--texto-h3);
+  max-width: 600px;
+  margin-bottom: var(--espaco-lg);
+  opacity: 0.9;
+}
+
+/* ─── COMPONENTE 2: Botões com modificadores ─────── */
+.btn {
+  display: inline-block;
+  font-family: var(--fonte-base);
+  font-size: var(--texto-base);
+  font-weight: 600;
+  padding: var(--espaco-sm) var(--espaco-lg);
+  border: 2px solid transparent;
+  border-radius: var(--raio-md);
+  cursor: pointer;
+  transition: var(--transicao);
+  text-decoration: none;
+  text-align: center;
+}
+
+.btn--primario {
+  background-color: var(--cor-primaria);
+  color: var(--cor-texto-claro);
+}
+
+.btn--primario:hover:not(:disabled) {
+  background-color: #3730a3;
+  transform: translateY(-2px);
+}
+
+.btn--secundario {
+  background-color: transparent;
+  border-color: var(--cor-secundaria);
+  color: var(--cor-secundaria);
+}
+
+.btn--secundario:hover:not(:disabled) {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-texto-claro);
+}
+
+.btn--perigo {
+  background-color: var(--cor-erro);
+  color: var(--cor-texto-claro);
+}
+
+.btn--perigo:hover:not(:disabled) {
+  background-color: #b91c1c;
+}
+
+/* Estados Globais do Bloco */
+.btn:focus-visible {
+  outline: 3px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  background-color: #d1d5db;
+  border-color: #d1d5db;
+  color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ─── COMPONENTE 3: Cartão Posicionado ───────────── */
+.card {
+  position: relative; /* Contexto essencial para a badge absolute */
+  background-color: var(--cor-fundo);
+  border-radius: var(--raio-lg);
+  box-shadow: var(--sombra-md);
+  overflow: hidden;
+  transition: var(--transicao);
+  border: 1px solid var(--fundo-alt);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-lg);
+}
+
+.card__badge {
+  position: absolute;
+  top: var(--espaco-md);
+  right: var(--espaco-md);
+  background-color: var(--cor-destaque);
+  color: var(--cor-texto-claro);
+  font-size: var(--texto-xs);
+  font-weight: 700;
+  padding: var(--espaco-xs) var(--espaco-sm);
+  border-radius: var(--raio-sm);
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+.card__imagem {
+  height: 200px;
+  background: linear-gradient(45deg, #e0e7ff, #c7d2fe);
+}
+
+.card__corpo {
+  padding: var(--espaco-lg);
+}
+
+.card__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: var(--texto-h3);
+  margin-bottom: var(--espaco-sm);
+}
+
+.card__texto {
+  font-size: var(--texto-sm);
+  color: var(--cor-texto);
+  margin-bottom: var(--espaco-md);
+}
+
+.card__link {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: var(--texto-sm);
+}
+
+.card__link:hover {
+  text-decoration: underline;
+}
+
+/* ─── COMPONENTE 4: Tabela de Tokens ─────────────── */
+.tabela-tokens {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--espaco-md);
+}
+
+.tabela-tokens th, 
+.tabela-tokens td {
+  padding: var(--espaco-md);
+  text-align: left;
+  border-bottom: 1px solid var(--cor-fundo-alt);
+}
+
+.tabela-tokens th {
+  background-color: var(--cor-fundo-alt);
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+}
+
+.tabela-tokens tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* ─── COMPONENTE 5: Formulário Estilizado ────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-md);
+}
+
+.form__grupo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-xs);
+}
+
+.form__label {
+  font-size: var(--texto-sm);
+  font-weight: 600;
+  color: var(--cor-texto);
+}
+
+.form__input {
+  padding: var(--espaco-sm) var(--espaco-md);
+  border: 2px solid #d1d5db;
+  border-radius: var(--raio-md);
+  transition: var(--transicao);
+}
+
+/* Estados pseudo-classes obrigatórias */
+.form__input:placeholder-shown {
+  font-style: italic;
+}
+
+.form__input:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+}
+
+/* Validações em tempo real pós-interação (simulado via pseudo-classes) */
+.form__input:required {
+  border-left: 4px solid var(--cor-primaria);
+}
+
+.form__input:not(:placeholder-shown):valid {
+  border-color: var(--cor-sucesso);
+}
+
+.form__input:not(:placeholder-shown):invalid {
+  border-color: var(--cor-erro);
+}
+
+/* Controle da visibilidade da mensagem de erro com base na validação */
+.form__mensagem-erro {
+  font-size: var(--texto-xs);
+  color: var(--cor-erro);
+  display: none;
+}
+
+.form__input:not(:placeholder-shown):invalid ~ .form__mensagem-erro {
+  display: block;
+}
